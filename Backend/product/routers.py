@@ -1,3 +1,5 @@
+### app to handle internal Django database and the external one brought from Bsale_test in the REST API ###
+
 class ProductRouter(object):
     """
     A router to control all database operations on models in the

@@ -1,5 +1,6 @@
 from django.db import models
 
+# Category model according to the database obtained
 class Category(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
 
@@ -7,7 +8,7 @@ class Category(models.Model):
         managed = False
         db_table = 'category'
 
-
+# product model according to the database obtained
 class Product(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     url_image = models.CharField(max_length=255, blank=True, null=True)
