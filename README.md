@@ -118,7 +118,73 @@ _El cliente se conecta a la API REST mediante pesticiones "Fetch", y la reactivi
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+_Para el despliegue se se separaron ambos proyectos según los siguientes repositorios (solo para despliegue):_
+
+[API REST (Backend - Repository)](https://github.com/lextomato/ShopOnlineBackend/tree/master)
+
+[Cliente (Frontend - Repository)](https://github.com/lextomato/ShopOnlineFrontend)
+
+_Tambien se modificaron las variables API_URL de "localhost" a las webs correspondientes del despliegue._
+
+#### _Se usó Heroku para el despligue y las URL funcionales son las siguientes:_
+
+[🔠 API REST](https://vast-reef-96012.herokuapp.com/api/)
+
+[🌎 Web App](https://shop-online-forntend.herokuapp.com/)
+
+_Hay que resaltar que los repositorios tienen pequeñas modificaciones para su implementación en heroku._
+
+### En el caso de la API REST se añadieron los siguientes archivos:
+```
+Procfile
+requirements.txt
+runtime.txt
+```
+_Ademas las siguientes modificaciones y configuraciones nuevas para el despliegue:_
+```
+import os
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'django-insecure-w!kv74ocnh@wb@(^suo-$jpg9vu7iso6sv-eblmss51c*hr99d'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-w!kv74ocnh@wb@(^suo-$jpg9vu7iso6sv-eblmss51c*hr99d')
+
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+
+ALLOWED_HOSTS = [
+    '*'
+]
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+# The absolute path to the directory where collectstatic will collect static files for deployment.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+```
+
+### En el caso del cliente se crearon los siguientes archivos:
+
+_composer.json:_
+```
+{}
+```
+
+_index.php:_
+```
+<?php include_once("index.html"); ?>
+```
+
+_Lo cual no es más que un simple truco para que Heroku pueda reconocer algún lenguaje y hacer el despliegue, ya que Heroku no reconce un proyecto de JavaScript simple (Vanilla JavaScript)._
+
 
 ## Versionado 📌
 
