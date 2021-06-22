@@ -315,7 +315,7 @@ searching(idGlobal, keyGlobal); // first call to bring the elements and paint th
 // request for product categories to the server
 const HTMLResponseCategories = document.querySelector("#categories");
 
-data = fetchNow(ext_URL = '/api/categories', API_URL); // request for categories, by request fecth
+data = fetchNow(ext_URL = '/api/categories/', API_URL); // request for categories, by request fecth
 // End.
 
 // filling categories to the menu
