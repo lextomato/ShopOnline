@@ -1,6 +1,6 @@
 # ShopOnline
 
-tienda online que despliega productos agrupados por la categoría a la que pertenecen, generando por separado backend (API REST) y frontend.
+Tienda online que despliega productos agrupados por la categoría a la que pertenecen, generando por separado backend (API REST) y frontend.
 
 ## Comenzando 🚀
 
@@ -69,13 +69,13 @@ _En el archivo:_
 ```
 Backend/product/models.py
 ```
-_Se implenta la estructura de los modelos de cada tabla obetnida desde la base de datos (Producto y Categoria)_
+_Se implementa la estructura de los modelos de cada tabla obetnida desde la base de datos (Producto y Categoria)_
 
 _Luego en el archivo:_
 ```
 Backend/product/routers.py
 ```
-_Se realizan las configuraciones necesarias para que la app maneje 2 base de datos (la internar pertenciente a la misma app y la externa perteneciente a Bsale_test)._
+_Se realizan las configuraciones necesarias para que la app maneje 2 bases de datos (la internar perteneciente a la misma app y la externa perteneciente a Bsale_test)._
 
 _Mas tarde en el archivo:_
 ```
@@ -114,11 +114,11 @@ Frontend/js/index.js
 ```
 _Se detalla y describe cada función implementada para hacer funcionar la aplicación web._
 
-_El cliente se conecta a la API REST mediante pesticiones "Fetch", y la reactividad de la página se implementó mediante la creación y eleminación de elemntos HTML aprovechando las pesticiones Fetch que se hacen al servidor._
+_El cliente se conecta a la API REST mediante pesticiones "Fetch", y la reactividad de la página se implementó mediante la creación y eliminación de elementos HTML aprovechando las peticiones Fetch que se hacen al servidor._
 
 ## Despliegue 📦
 
-_Para el despliegue se se separaron ambos proyectos según los siguientes repositorios (solo para despliegue):_
+_Para el despliegue se separaron ambos proyectos según los siguientes repositorios (solo para despliegue):_
 
 [API REST (Backend - Repository)](https://github.com/lextomato/ShopOnlineBackend/tree/master)
 
