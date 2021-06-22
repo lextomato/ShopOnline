@@ -237,7 +237,7 @@ function toCart(id) {
     let ul = document.createElement('ul');
     ul.setAttribute('id', 'cartList');
     const API_URL = 'http://localhost:8000';
-    const ext_URL = '/api/search';
+    const ext_URL = '/api/search/';
 
     total = 0; // variable initialization of the purchase total
     elementsCart++; // total products counter
