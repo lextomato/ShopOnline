@@ -27,6 +27,7 @@ Django 3.2.4
 django-cors-headers 3.7.0
 djangorestframework 3.12.4
 PyMySQL 1.0.2
+drf-spectacular==0.17.2
 ```
 
 _Se usó Django como framework principal, e implementando Django Rest Framework para contruir la API REST bajo el nombre global de la aplicación "Shop"._
@@ -95,6 +96,8 @@ Backend/shop/urls.py
 ```
 _Se importan las vistas creadas de la app "product" para registrar las rutas correspondientes a la API REST y que se muestren en el navegador o para consumir la API REST posteriormente desde el cliente._
 
+_Por otra parte se hizo uso de la librería "drf-spectacular" para generar una vista basica de documentos y pruebas de Endpoints de la API REST, siguiendo el tutorial del repositorio [Drf-spectacular](https://github.com/tfranzel/drf-spectacular)_
+
 
 ### Cliente (Frontend) 🏠
 
@@ -116,6 +119,8 @@ _Se detalla y describe cada función implementada para hacer funcionar la aplica
 
 _El cliente se conecta a la API REST mediante pesticiones "Fetch", y la reactividad de la página se implementó mediante la creación y eliminación de elementos HTML aprovechando las peticiones Fetch que se hacen al servidor._
 
+_Para ver como confunciona la Web, ver el documento PDF del repositorio ["COMO FUNCIONA EL fRONTEND DE BSALE.pdf"](https://github.com/lextomato/ShopOnline/blob/master/COMO%20FUNCIONA%20EL%20FRONTEND%20DE%20BSALE.pdf)_
+
 ## Despliegue 📦
 
 _Para el despliegue se separaron ambos proyectos según los siguientes repositorios (solo para despliegue):_
@@ -128,9 +133,9 @@ _Tambien se modificaron las variables API_URL de "localhost" a las webs correspo
 
 #### _Se usó Heroku para el despligue y las URL funcionales son las siguientes:_
 
-[🔠 API REST](https://vast-reef-96012.herokuapp.com/api/)
+[🔠 API REST](https://vast-reef-96012.herokuapp.com/api/)   ||   [Documentación API REST](https://vast-reef-96012.herokuapp.com/docs/)
 
-[🌎 Web App](https://shop-online-forntend.herokuapp.com/)
+[🌎 Web App](https://shop-online-forntend.herokuapp.com/)   ||   [Como funciona el Frontend](https://github.com/lextomato/ShopOnline/blob/master/COMO%20FUNCIONA%20EL%20FRONTEND%20DE%20BSALE.pdf)
 
 _Hay que resaltar que los repositorios tienen pequeñas modificaciones para su implementación en heroku._
 
